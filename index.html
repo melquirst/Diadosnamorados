@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu — Júlia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="coracao-canvas"></canvas>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">12 de junho</p>
+            <h1>Museu</h1>
+            <p class="hero-sub">Bem-vinda ao único museu onde a obra mais valiosa<br>não foi criada, apenas encontrada.</p>
+            <button class="btn-entrar" onclick="entrarMuseu()">
+                <span>Entrar no Museu</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <main id="museu">
+
+        <section class="sala" id="sala-exposicoes">
+            <div class="sala-header">
+                <h2>Exposições</h2>
+            </div>
+
+            <div class="galeria">
+                <div class="quadro reveal">
+                    <div class="quadro-img-wrap">
+                        <img src="img/Sorriso que tanto amo.png" alt="Obra Nº 001" onerror="this.parentElement.classList.add('sem-foto')">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="quadro-num">001</span>
+                        <p>O sorriso que me fez perder qualquer argumento</p>
+                    </div>
+                </div>
+
+                <div class="quadro reveal">
+                    <div class="quadro-img-wrap">
+                        <img src="img/Nosso primeiro momento após a permissão.png" alt="Obra Nº 002" onerror="this.parentElement.classList.add('sem-foto')">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="quadro-num">002</span>
+                        <p>Nosso primeiro momento após a permissão</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sala sala-alt" id="sala-memorias">
+            <div class="sala-header">
+                <h2>Memórias</h2>
+            </div>
+
+            <div class="galeria">
+                <div class="quadro reveal">
+                    <div class="quadro-img-wrap">
+                        <img src="img/Nós.png" alt="Obra Nº 003" onerror="this.parentElement.classList.add('sem-foto')">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="quadro-num">003</span>
+                        <p>Nós</p>
+                    </div>
+                </div>
+
+                <div class="quadro reveal">
+                    <div class="quadro-img-wrap">
+                        <img src="img/Nosso beijo.png" alt="Obra Nº 004" onerror="this.parentElement.classList.add('sem-foto')">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="quadro-num">004</span>
+                        <p>O nosso beijo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sala sala-motivos" id="sala-motivos">
+            <div class="sala-header">
+                <h2>Coisas que amo em você</h2>
+            </div>
+
+            <div class="motivos">
+                <div class="motivo reveal" style="--d:0.05s">
+                    <p>Seu sorriso</p>
+                </div>
+                <div class="motivo reveal" style="--d:0.15s">
+                    <p>Sua voz</p>
+                </div>
+                <div class="motivo reveal" style="--d:0.25s">
+                    <p>Seu olhar</p>
+                </div>
+                <div class="motivo reveal" style="--d:0.35s">
+                    <p>Seu jeito de ser</p>
+                </div>
+                <div class="motivo reveal" style="--d:0.45s">
+                    <p>Seu jeitinho</p>
+                </div>
+                <div class="motivo reveal" style="--d:0.55s">
+                    <p>VOCÊ!!!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sala sala-futuro" id="sala-futuro">
+            <div class="sala-header">
+                <h2>Futuro</h2>
+            </div>
+
+            <div class="galeria-futuro">
+                <div class="quadro-futuro reveal">
+                    <div class="futuro-linha"></div>
+                    <h3>Nossa futura família</h3>
+                    <p>A vida que vamos construir juntos</p>
+                </div>
+                <div class="quadro-futuro reveal">
+                    <div class="futuro-linha"></div>
+                    <h3>Nossas futuras viagens</h3>
+                    <p>Lugares que ainda vamos descobrir</p>
+                </div>
+                <div class="quadro-futuro reveal">
+                    <div class="futuro-linha"></div>
+                    <h3>Nossas futuras conquistas</h3>
+                    <p>Tudo que ainda vamos alcançar</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="final">
+            <div class="porta reveal" onclick="abrirPorta()">
+                <div class="porta-inner">
+                    <span class="porta-texto">ACESSO RESTRITO</span>
+                    <span class="porta-hint">clique para abrir</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="segredo" onclick="fecharSegredo()">
+        <div class="conteudo-secreto" onclick="event.stopPropagation()">
+            <div class="coroas">♡</div>
+            <h2>A Obra Mais Valiosa</h2>
+            <p class="secreto-intro">Após uma longa pesquisa, o museu encontrou a peça mais rara já registrada.</p>
+            <div class="obra-final-wrap">
+                <img src="img/Deusa.png" class="obra-final" alt="Júlia" onerror="this.style.display='none'">
+            </div>
+            <h3 class="nome-final">Júlia</h3>
+            <p class="frase-final">
+                Não é a mais rara porque existe apenas uma.<br>
+                É a mais rara porque é a única que eu nunca quero perder.
+            </p>
+            <button class="btn-fechar" onclick="fecharSegredo()">fechar</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
